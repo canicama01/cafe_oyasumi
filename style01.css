@@ -1,0 +1,721 @@
+*{
+margin: 0;
+padding: 0;
+}
+html{
+    width: 100%;
+}
+/*ヘッダー*/
+
+/* ハンバーガーメニュー
+.menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 2vw;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 40px;
+    border-radius: 3px;
+    background-color: #000000;
+    position: absolute;
+}
+.menu-btn span:before {
+    bottom: 8px;
+}
+.menu-btn span:after {
+    top: 8px;
+}*/
+
+/*ヘッダー*/
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  z-index: 200;
+}
+.global-nav {
+  position: fixed;
+  right: -320px; /* これで隠れる */
+  top: 0;
+  width: 300px; /* スマホに収まるくらい */
+  height: 100vh;
+  padding-top: 140px;
+  background-color: #fff;
+  transition: all .6s;
+  z-index: 201;
+  overflow-y: auto; /* メニューが多くなったらスクロールできるように */
+}
+.hamburger {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: 40px; /* クリックしやすいようにちゃんと幅を指定する */
+  height: 40px; /* クリックしやすいようにちゃんと高さを指定する */
+  cursor: pointer;
+  z-index: 300;
+  padding-right: 4%;
+}
+.global-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.global-nav__item {
+    padding: 0 3em;
+}
+.global-nav__item a {
+  display: block;
+  padding: 30px;
+  font-size: 0.9em;
+  font-weight: 600;
+  text-decoration: none;
+  color: #111;
+  letter-spacing: 0.4em;
+}
+.global-nav__item a:hover {
+  background-color: #eee;
+}
+.hamburger__line {
+  position: absolute;
+  left: 11px;
+  width: 30px;
+  height: 1px;
+  background-color: rgb(0, 0, 0);
+  transition: all .6s;
+}
+.hamburger__line--1 {
+  top: 14px;
+}
+.hamburger__line--2 {
+  top: 20px;
+}
+.hamburger__line--3 {
+  top: 22px;
+}
+.black-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: #000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .6s;
+  cursor: pointer;
+}
+/* 表示された時用のCSS */
+.nav-open .global-nav {
+  right: 0;
+}
+.nav-open .black-bg {
+  opacity: .8;
+  visibility: visible;
+}
+.nav-open .hamburger__line--1 {
+  transform: rotate(45deg);
+  top: 20px;
+}
+.nav-open .hamburger__line--2 {
+  width: 0;
+  left: 50%;
+}
+.nav-open .hamburger__line--3 {
+  transform: rotate(-45deg);
+  top: 20px;
+}
+/*ナビ追記（SNSアイコン）*/
+.nav_sns_icon ul{
+  background-color: brown;
+}
+.nav_sns_icon .fa-2x{
+  color: black;
+  margin-top: 20px;
+  margin-left: 65px;
+  font-size: 1.5em;
+}
+.nav_sns_icon ul li{
+  list-style: none;
+  width: 30px;
+  height: 30px;
+  float: left;
+  padding: 10px;
+  margin: 1em;
+}
+/* scroll */
+.scrolldown1{
+    height: 7vh;
+    bottom: 0px;
+    right: 50%;
+    position: absolute;
+  }
+  
+  /* コピペ　*/
+  
+  .scrolldown1 span{
+    position: absolute;
+    left: -7px;
+    top: -34px;
+    color: rgb(255, 255, 255);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    writing-mode: vertical-rl;
+  }
+  
+  /* 線の描写 */
+  .scrolldown1::after{
+  content: "";
+    /*描画位置*/
+  position: absolute;
+  top: 0;
+    /*線の形状*/
+  width: 1px;
+  height: 30px;
+  background: rgb(255, 255, 255);
+    /*線の動き1.4秒かけて動く。永遠にループ*/
+  animation: pathmove 1.4s ease-in-out infinite;
+  opacity:0;
+  }
+  
+  /*高さ・位置・透過が変化して線が上から下に動く*/
+  @keyframes pathmove{
+  0%{
+    height:0;
+    top:0;
+    opacity: 0;
+  }
+  30%{
+    height:30px;
+    opacity: 1;
+  }
+  100%{
+    height:0;
+    top:50px;
+    opacity: 0;
+  }
+  }
+/*ホーム*/
+.home{
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+}
+.copyWrite{
+  writing-mode: vertical-rl;
+  position: absolute;
+  top: 31%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 2;
+  letter-spacing: 0.9em;
+  font-size: 1em;
+  color: white;
+}
+.home_contents01{
+    height: 100vh;
+    width: 100%;
+    background-image: url(images/exterior02.png);
+    background-size: cover;
+}
+.home_contents02{
+    height: 6vh;
+    bottom: 16vh;
+    position: absolute;
+    font-size: 0.9em;
+    letter-spacing: 2.25em;
+    color: rgb(0, 0, 0);
+    left: 54%;
+    top: 83%;
+    transform: translate(-50%,-50%);
+}
+@media screen and (min-width:768px) {
+  .home_contents01{
+    background-image: url(images/exterior02.png);
+  }
+}
+/*コンテンツ*/
+.border_boxA{
+  width: 100%;
+  height: 160px;
+}
+.border_box{
+  width: 1.6em;
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+  margin: 0.4em 0 1em 0;
+}
+.content_background{
+  height: 25%;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+}
+/*コンセプト*/
+.concept{
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  width: 100%;
+}
+.concept h1{
+  font-size: 0.9em;
+  letter-spacing: 0.3em;
+  font-weight: 100;
+  margin-top: 5em;
+  display: inline-block;
+  font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .concept h1{
+    font-weight: 100;
+    margin-top: 4em;
+    display: inline-block;
+    font-weight: 600;
+  }
+}
+.concept_contents{
+  width: 64%;
+  margin: 0 auto;
+}
+.concept_text p{
+  list-style: none;
+  font-size: 0.7em;
+  line-height: 2.5em;
+  letter-spacing: 0.06em;
+  margin-top: 2em;
+}
+
+.concept_text01{
+  line-height: 2.1em;
+  display: inline-block;
+  letter-spacing: 0.1em;
+  width: 100%;
+  font-size: 0.9em;
+  /* font-weight: 600; */
+  margin-top: 3em;
+}
+.concept_text02{
+  font-size: 0.7em;
+  line-height: 4em;
+  letter-spacing: 0.06em;
+  /* float: left; */
+  /* text-align: center; */
+}
+.concept_image01{
+  background-image: url(images/exterior02.png);
+    background-size: cover;
+    height: 39vh;
+    width: 89%;
+    /* float: left; */
+    /* margin-top: 2em; */
+    margin: 2em auto;
+    /* max-width: 500px; */
+}
+@media screen and (min-width: 768px) {
+  .concept_image01{
+    width: 40%;
+    height: 100%;
+    float: left;
+    margin: 0;
+  }
+  }
+  @media screen and (min-width: 768px) {
+    .concept_contents{
+      width: 40%;
+      display: inline-block;
+      margin-left: 270px;
+      margin-top: 230px;
+    }
+    .concept_text p{
+      font-size: 0.9em;
+    }
+    .concept_text01{
+      font-size: 1.2em;
+      font-weight: 100;
+    }
+    .border_box{
+          /* width: 2em; */
+    height: 2.2px;
+    /* background-color: rgb(0, 0, 0); */
+    margin: 0.5em 0 1em 0;
+    }
+  }
+/*メニュー*/
+.menu{
+    height: 100vh;
+    background-color: rgb(245, 245, 245);
+}
+.menu_list{
+    margin: 0 auto 55px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding-top: 250px;
+    padding-bottom: 30px;
+}
+.menu_image01{
+    background-image: url(images/soda-various03.png);
+    background-size: cover;
+    width: 100%;
+    height: 50vh;
+}
+.menu_text{
+    width: 49%;
+    margin: 0 auto;
+}
+.menu_text h1{
+  font-size: 0.9em;
+  letter-spacing: 0.3em;
+  font-weight: 100;
+  margin-top: 6em;
+  display: inline-block;
+  font-weight: 600;
+}
+.menu_text p{
+    font-size: 0.7em;
+    line-height: 2.5em;
+    letter-spacing: 0.06em;
+}
+.menu_image02{
+    margin: 1.1em;
+    background-image: url(images/menu_image02.jpeg);
+    background-size: cover;
+    width: 365px;
+    height: 365px;
+    display: inline-block;
+}
+.menu_image03{
+    margin: 1.1em;
+    background-image: url(images/menu_image05.jpeg);
+    background-size: cover;
+    width: 365px;
+    height: 365px;
+    display: inline-block;
+}
+.menu_more{
+  color: rgb(0, 0, 0);
+    height: 35px;
+    justify-content: center;
+    letter-spacing: 0.1em;
+    align-items: center;
+    border: 0.1em solid #000;
+    display: flex;
+    margin: 3em 39vw 0 39vw;
+    font-size: 0.9em;
+    left: 250px;
+    z-index: 0;
+}
+.menu_more a{
+  color: #000;
+  text-decoration: none;
+}
+@media screen and (min-width:768px) {
+    .menu_image01{
+      width: 60%;
+      height: 100vh;
+      float: left;
+    }
+    .menu_text{
+    margin-left: 200px;
+    margin-top: 200px;
+    width: 20%;
+    display: inline-block;
+    }
+    .menu_text p {
+      font-size: 0.9em;
+    }
+    .menu_more{
+      width: 100px;
+      position: relative;
+    }
+}
+/*アクセス*/
+.access{
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+}
+.access_google{
+    float: left;
+    width: 100%;
+    height: 32vh;
+}
+.access_contents{
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 11vh;
+}
+.access h1{
+  font-size: 0.8em;
+  letter-spacing: 0.3em;
+  font-weight: 600;
+  margin-left: 1.3em;
+}
+.access_text{
+  display: inline-block;
+  margin-top: 2.5em;
+}
+.access_text ul{
+    margin-top: 2em;
+    margin-left: 1.3em;
+}
+.access_text ul li i{
+  color: rgb(182, 182, 182);
+}
+.access_text ul li{
+  list-style: none;
+  font-size: 0.77em;
+  letter-spacing: 0.2em;
+  padding: 1em 0;
+}
+.access_text ul li p{
+  display: inline-block;
+  font-size: 0.85em;
+  padding-top: 0.5em;
+}
+.access_text ul li  span{
+  font-size: 0.85em;
+  margin-left: 1em;
+}
+.access_icon ul{
+  margin-top: 2em;
+}
+.access_icon ul li{
+    list-style: none;
+    float: left;
+    width: 51px;
+    height: 60px;
+    margin: 0 9px;
+    text-align: center;
+    font-size: 0.5em;
+    color: black;
+}
+.access_icon ul li p{
+  letter-spacing: 0.3em;
+  margin-top: 1.5em;
+  font-size: 0.5em;
+}
+@media screen and (min-width:768px) {
+  .access_google{
+    width: 420px;
+    height: 420px;
+    background-color: grey;
+  }
+  .access_contents{
+    width: 55%;
+    padding-top: 25vh;
+  }
+  .access_icon{
+    width: 50%;
+    height: 10vh;
+    margin-left: 520px;
+  }
+  .access_text{
+    margin-left: 10vh;
+  }
+  .access_text ul li{
+    font-size: 1em;
+  }
+  .access_icon ul li{
+    font-size: 0.7em;
+  }
+}
+/*フッター*/
+footer{
+  height: 25vh;
+  color: #000000;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+}
+.footer_text ul li p{
+  margin-bottom: 0.5em;
+  font-size: 0.5em;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+.footer{
+  width: 100%;
+  text-align: center;
+  font-size: 0.85em;
+}
+.footer p{
+  display: inline-block;
+  margin-top: 3em;
+}
+.footer_text{
+  float: left;
+  width: 100%;
+}
+.footer_text ul {
+  margin: 0 auto;
+  width: 50%;
+}
+.footer_text ul li{
+  padding: 0.7em;
+  list-style: none;
+}
+.footer_text ul li span{
+  margin-left: 1em;
+  font-size: 0.85em;
+}
+.footer_icon{
+  margin: 0 auto;
+  display: inline-block;
+}
+.footer_icon ul li {
+  list-style: none;
+  float: left;
+  margin-left: 25px;
+  padding: 1.1em 0;
+  font-size: 0.8em;
+}
+.footer_text ul li p{
+  text-align: center;
+}
+.border{
+  width: 100%;
+  height: 1px;
+  background-color: rgb(189, 189, 189);
+  float: left;
+  margin-bottom: 2em;
+  margin-top: 0px;
+}
+
+
+@media screen and (min-width:768px) {
+  footer{
+    height: 20vh;
+  }
+  .footer{
+    width: 30%;
+    display: inline-block;
+  }
+  .footer p {
+    margin: 0;
+  }
+  .footer_text{
+    width: 70%;
+    float: left;
+  }
+  .footer_text ul {
+    margin: 0 auto;
+    width: 80%;
+    height: 3em;
+  }
+  .footer_text ul li{
+    float: left;
+    list-style: none;
+    margin: 0 5em;
+  }
+  .border{
+    margin-bottom: 70px;
+  }
+  .footer_icon{
+    width: 30%;
+    float: left;
+  }
+  .footer_icon ul{
+    margin-left: 340px;
+  }
+}
+.footer_icon ul li{
+  list-style: none;
+  float: left;
+  margin-left: 20px;
+}
+.footer_icon ul li a i{
+  color: rgb(133, 133, 133);
+}
+.fa-2x{
+color: white;
+}
+/*メニューページ*/
+.menu_contents h1{
+  padding: 3em 0 0 0;
+  width: 100vw;
+  box-sizing: border-box;
+  letter-spacing: 0.3em;
+  font-size: 2em;
+}
+.menupage{
+  width: 100vw;
+  background-color: black;
+  text-align: center;
+}
+.menupageA{
+  background-color: firebrick;
+  height: 40vh;
+  bottom: 0;
+  
+}
+.season_menu{
+  background-color: dodgerblue;
+  height: 100vh;
+  text-align: center;
+}
+.season_menu ul{
+  margin: 100px 20px 77px 20px;
+}
+.season_menu li{
+  background-color: rgb(181, 181, 202);
+  height: 40vh;
+  width: 30vh;
+  display: inline-block;
+  list-style: none;
+  margin: 20px 20px 77px 20px;
+  height: 49vh;
+  width: 40vh;
+}
+.food{
+  background-color: rgb(128, 69, 69);
+  height: 100vh;
+}
+.food ul{
+  margin: 30px;
+}
+.food ul li{
+  background-color: rgb(211, 13, 13);
+  width: 353px;
+  height: 250px;
+  display: inline-block;
+  margin: 20px 20px 77px 20px;
+  list-style: none;
+}
+.drink{
+  background-color: rgb(199, 192, 192);
+  height: 100vh;
+}
+.drink ul{
+  margin: 10px;
+}
+.drink ul li{
+  width: 37vh;
+  display: inline-block;
+  margin: 20px 20px 17px 20px;
+  list-style: none;
+  overflow: hidden;
+}
+.menupage1 ul{
+  list-style: none;
+}
+.other_menu{
+  width: 21vh;
+  height: 2.5vh;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  letter-spacing: 0.5em;
+  padding: 10px;
+}
