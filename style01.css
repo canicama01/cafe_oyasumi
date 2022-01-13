@@ -570,6 +570,7 @@ footer{
 .footer_text ul li span{
   margin-left: 1em;
   font-size: 0.85em;
+  text-decoration: none;
 }
 .footer_icon{
   margin: 0 auto;
