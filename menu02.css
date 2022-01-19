@@ -4,6 +4,7 @@
 }
 html{
     width: 100%;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 /*ヘッダー*/
@@ -147,7 +148,7 @@ html{
 .menu_home_image{
     height: 50vh;
     background-color: #504040;
-    background-image: url(images/soda-various03.png);
+    background-image: url(images/menu-home01.png);
     background-size: cover;
 }
 .menu_contents{
@@ -186,7 +187,7 @@ html{
   .menu_home_image{
     width: 50%;
     height: 100vh;
-    background-image: url(images/soda-various02.png);
+    background-image: url(images/menu-home-pc.png);
     background-size: cover;
     display: inline-block;
     float: left;
@@ -232,7 +233,10 @@ html{
   background-image: url(images/season_cake03.png);
 }
 .macaron-sakura{
-  background-image: url(images/macaron-sakura.png);
+  background-image: url(images/sakura-macaron01.png);
+}
+.coffeeJelly{
+  background-image: url(images/coffeJelly01.png);
 }
 .season_menu ul li p{
     margin-top: 19em;
@@ -264,18 +268,21 @@ html{
     margin-top: 27em;
   }
   .sakuraSoda{
-    background-image: url(images/sakura-soda03.png);
+    background-image: url(images/sakuraSoda02-pc.png);
   }
   .cake_season{
     background-image: url(images/season_cake02-pc.png);
   }
   .macaron-sakura{
-    background-image: url(images/macaron-sakura-pc.png);
+    background-image: url(images/sakura-macaron-pc.png);
+  }
+  .coffeeJelly{
+    background-image: url(images/coffeJelly-pc.png);
   }
 }
 /*フードメニュー*/
 .food_menu{
-    height: 120vh;
+    height: 90vh;
     background-color: rgb(255, 255, 255);
 }
 .food_menu ul{
@@ -296,14 +303,17 @@ html{
     margin-top: 9em;
 }
 .macaron{
-  background-image: url(images/macaron02.png);
+  background-image: url(images/macaron04.png);
 }
 .pding{
-  background-image: url(images/pding-a.png);
+  background-image: url(images/pding03.png);
+}
+.ice_cream{
+  background-image: url(images/iceCream01.png);
 }
 @media screen and (min-width:768px) {
   .food_menu{
-    width: 71%;
+    width: 50%;
     height: 100vh;
     margin: 0 auto;
   }
@@ -315,6 +325,15 @@ html{
     font-size: 0.9em;
     letter-spacing: 0.15em;
     margin-top: 15em;
+  }
+  .macaron{
+    background-image: url(images/macaron03-pc.png);
+  }
+  .pding{
+    background-image: url(images/pding02-pc.png);
+  }
+  .ice_cream{
+    background-image: url(images/iceCream-pc.png);
   }
 }
 /*ドリンクメニュー*/
@@ -340,6 +359,9 @@ html{
 }
 .sky_soda{
   background-image: url(images/soda_sky02.png);
+}
+.soda{
+  background-image: url(images/creamSoda01.png);
 }
 .mc{
   background-image: url(images/cafeore02.png);
@@ -398,11 +420,17 @@ html{
 .sky_soda{
   background-image: url(images/soda_sky-pc01.png);
 }
+.soda{
+  background-image: url(images/creamSoda-pc.png);
+}
 .chery_soda{
   background-image: url(images/drink01-pc.png);
 }
 .remon_soda{
   background-image: url(images/remonSoda-pc.png);
+}
+.mc{
+  background-image: url(images/cafeore-pc01.png);
 }
 }
 /*フッター*/
